@@ -1,5 +1,5 @@
 # MySQL on Raspberry Pi
-This is a simple guide to establish your own database with MySQL (I would recommend using MariaDB instead).
+This is a simple guide to build your own database with MySQL (I would recommend using MariaDB instead).
 
 MariaDB intended to maintain high compatibility with MySQL, ensuring a drop-in replacement capability with library binary parity and exact matching with MySQL APIs and commands.
 However, new features diverge more. It includes new storage engines like Aria, ColumnStore, and MyRocks.
@@ -63,4 +63,55 @@ In case you have somehow encounter difficulties, woundering how to fix the probl
 You might try the secure installation. Hope it would help.
 ```shell
 sudo mysql_secure_installation
+```
+
+
+## Some useful command in CLI
+
+● show user 顯示目前登入使用者
+```
+MariaDB [ABC]> SELECT USER();
+```
+
+● show the version 顯示資料庫版本
+```
+MariaDB [ABC]> SELECT VERSION();
+```
+
+● show all databases 顯示已經建立的資料庫
+```
+MariaDB [ABC]> SHOW databases;
+```
+
+● build a database named "ABC" 建立 ABC 資料庫：
+```
+MariaDB [(noen)]>CREATE DATABASE ABC;
+```
+
+● choose a database 選擇資料庫
+```
+MariaDB [(none)]> USE ABC;
+```
+
+● delete a database called "ABC" 刪除資料庫
+```
+MariaDB [(none)]> DROP DATABASE ABC;
+```
+
+● build a table 建立資料表
+```
+MariaDB [ABC]> create table customer(name varchar(10), join_date date) DEFAULT CHARSET=utf8;
+```
+
+● check out a table 查看資料表
+```
+MariaDB [ABC]> DESC customer;
+```
+● delete a table 刪除資料表
+```
+MariaDB [ABC]> DROP table customer;
+```
+● clear all the data in a table 清空資料表內資料
+```
+MariaDB [ABC]> DELETE FROM customer;
 ```
