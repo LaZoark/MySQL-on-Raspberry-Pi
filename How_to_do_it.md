@@ -1,6 +1,4 @@
-# MySQL on Raspberry Pi
-
-## Installation:
+## Installation
 ```shell
 sudo apt-get -y install mariadb-server 
 sudo apt-get -y install php-mysql
